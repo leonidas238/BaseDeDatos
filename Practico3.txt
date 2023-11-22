@@ -1,0 +1,39 @@
+Aquí está la descripción textual del MER basado en las modificaciones que hemos discutido,que puedes utilizar como referencia para crear un diagrama entidad-relación (DER) en una herramienta de diseño de bases de datos:
+
+Entidades:
+
+Usuario
+
+Atributos: ID (Clave Primaria), Nombre, Email, Rol_ID
+Relaciones: Usuario tiene un Rol
+Rol
+
+Atributos: ID (Clave Primaria), Nombre
+Departamento
+
+Atributos: ID (Clave Primaria), Nombre
+Proyecto
+
+Atributos: ID (Clave Primaria), Nombre, Fecha_Contrato
+Ticket
+
+Atributos: ID (Clave Primaria), Titulo, Descripcion, Estado_ID, Prioridad, Usuario_Solicitante_ID, Departamento_ID, Proyecto_ID, Activo_ID, Fecha_Creacion, Responsable_ID
+Relaciones: Ticket tiene un Estado, Ticket tiene un Usuario_Solicitante, Ticket pertenece a un Departamento, Ticket pertenece a un Proyecto, Ticket tiene un Activo, Ticket tiene un Responsable, Ticket tiene varios Activos a través de la relación Tickets_Activos
+Estado
+
+Atributos: ID (Clave Primaria), Nombre
+Relaciones: Estado es parte de varios Tickets
+Activo
+
+Atributos: ID (Clave Primaria), Nombre, Tipo, Descripcion, Fecha_Adquisicion
+Relaciones: Activo es parte de varios Tickets a través de la relación Tickets_Activos
+Relaciones:
+
+Usuario tiene un Rol (Relación 1 a N entre Usuario y Rol)
+Ticket tiene un Estado (Relación 1 a N entre Ticket y Estado)
+Ticket tiene un Usuario_Solicitante (Relación 1 a N entre Ticket y Usuario)
+Ticket pertenece a un Departamento (Relación 1 a N entre Ticket y Departamento)
+Ticket pertenece a un Proyecto (Relación 1 a N entre Ticket y Proyecto)
+Ticket tiene un Activo (Relación 1 a N entre Ticket y Activo)
+Ticket tiene un Responsable (Relación 1 a N entre Ticket y Usuario)
+Ticket tiene varios Activos a través de la relación Tickets_Activos (Relación N a M entre Ticket y Activo)
